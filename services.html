@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>الخدمات - PANEL PIDRI.XX3</title>
+  <style>
+    body {
+      margin:0; padding:0; text-align:center; font-family:Tahoma;
+      color:#fff;
+      background:url("1589940615c43eb277ee2155eed99491.jpg") no-repeat center center fixed;
+      background-size:cover; /* الخلفية تغطي الشاشة بالكامل */
+    }
+
+    h2 {
+      margin-top:60px;
+      text-shadow:0 0 25px #00ff00, 0 0 50px #007bff;
+      font-size:38px; /* أصغر قليلاً لتقليل الضغط */
+    }
+
+    .btn {
+      display:flex; align-items:center; justify-content:center;
+      width:340px; margin:30px auto; padding:20px;
+      border:none; border-radius:18px; font-size:22px; color:#fff;
+      cursor:pointer; background-size:200% auto;
+      transition:0.4s;
+      font-weight:bold;
+      animation:btnGlow 5s infinite alternate; /* أبطأ لتقليل اللاغ */
+    }
+    .btn:hover {
+      transform:scale(1.1);
+      box-shadow:0 0 60px #fff, 0 0 90px #ff0000;
+      background-position:right center;
+    }
+    .btn img {
+      width:28px; height:28px; margin-right:10px;
+    }
+
+    /* زر مجاني */
+    .free {
+      background-image:linear-gradient(45deg,#28a745,#7fff7f,#28a745);
+      text-shadow:0 0 20px #7fff7f, 0 0 40px #28a745;
+    }
+
+    /* زر مدفوع VIP بدون شعار */
+    .vip {
+      background-image:linear-gradient(45deg,#8000ff,#ff00ff,#8000ff);
+      text-shadow:0 0 20px #ff00ff, 0 0 40px #8000ff;
+    }
+
+    /* أنيميشن التوهج لكلا الزرين */
+    @keyframes btnGlow {
+      0% { box-shadow:0 0 25px #007bff; }
+      50% { box-shadow:0 0 35px #ff0000; }
+      100% { box-shadow:0 0 45px #6a00ff; }
+    }
+
+    p {
+      width:70%;
+      margin:15px auto;
+      font-size:18px; /* أصغر قليلاً */
+      line-height:1.7;
+      color:#eee;
+      text-shadow:0 0 10px #000, 0 0 20px #007bff;
+    }
+  </style>
+</head>
+<body>
+<audio id="bgMusic" autoplay>
+  <source src="251d3f193639201509287dbe542d40a8.mp3" type="audio/mpeg">
+  متصفحك لا يدعم تشغيل الصوت.
+</audio>
+
+<script>
+  const audio = document.getElementById("bgMusic");
+
+  // عند تحميل الصفحة، إذا كان فيه وقت محفوظ، نكمل منه
+  window.addEventListener("load", () => {
+    const savedTime = localStorage.getItem("musicTime");
+    if (savedTime) {
+      audio.currentTime = savedTime;
+    }
+    audio.play();
+  });
+
+  // أثناء تشغيل الصوت، نحفظ الوقت كل ثانية
+  setInterval(() => {
+    localStorage.setItem("musicTime", audio.currentTime);
+  }, 1000);
+</script>
+  <h2>جميع الخدمات</h2>
+  
+  <button class="btn free" onclick="location.href='https://www.mediafire.com/file/3y8p7fpv7obtgc6/PIDRI.XX3_2.2.apk/file'">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Download_alt_font_awesome.svg"> مجاني
+  </button>
+  <p>هذا بانل تحسين إيم مجاني (نسبة ضعيفة، نو بلاك ليست). مني لكم، أتمنى دعمكم.</p>
+  
+  <button class="btn vip" onclick="location.href='https://www.tiktok.com/@ward.x?_r=1&_t=ZS-95cQTHqBrHE'">
+    مدفوع (VIP)
+  </button>
+  <p>إذا أردت بنلات مو بلاك ليست من برمجتي الشخصية ✅ فما عليك سوى التواصل معي. لدينا MOD PIDRI.XX3 بالإضافة إلى العديد من PANEL بمختلف الميزات.</p>
+</body>
+</html>

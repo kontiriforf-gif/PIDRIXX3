@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>PANEL PIDRI.XX3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin:0; padding:0; text-align:center; font-family:"Segoe UI", Tahoma, sans-serif;
+      color:#fff;
+      background:url("6765645a3c36ac769ca8cda0cffff9a4.jpg") no-repeat center center fixed;
+      background-size:cover;
+      overflow-x:hidden;
+    }
+
+    /* العنوان */
+    .panel-title {
+      display:inline-block;
+      margin-top:60px;
+      margin-bottom:70px;
+      padding:30px 80px;
+      font-size:64px; /* أكبر */
+      font-weight:bold;
+      text-transform:uppercase;
+      letter-spacing:6px;
+      font-family:"Orbitron", sans-serif;
+      color:#00f;
+      border:3px solid #6a00ff;
+      border-radius:20px;
+      background:rgba(0,0,0,0.6);
+      box-shadow:0 0 35px #6a00ff, 0 0 60px #000 inset;
+      animation:titleGlow 4s ease-in-out infinite alternate;
+    }
+    @keyframes titleGlow {
+      from { text-shadow:0 0 30px #007bff; }
+      to { text-shadow:0 0 60px #ff0000; }
+    }
+
+    /* الصورة الدائرية */
+    .profile-pic {
+      width:280px; height:280px; /* أكبر */
+      border-radius:50%;
+      border:4px solid #007bff;
+      margin-bottom:70px;
+      animation:glowPic 5s infinite alternate, floatPic 8s ease-in-out infinite;
+    }
+    @keyframes glowPic {
+      0% { box-shadow:0 0 30px #007bff; }
+      50% { box-shadow:0 0 40px #ff0000; }
+      100% { box-shadow:0 0 50px #6a00ff; }
+    }
+    @keyframes floatPic {
+      0% { transform:translateY(0); }
+      50% { transform:translateY(-12px); }
+      100% { transform:translateY(0); }
+    }
+
+    /* الأزرار */
+    .btn {
+      display:block;
+      width:500px; margin:40px auto; padding:28px;
+      border:none; border-radius:30px; font-size:32px; color:#fff;
+      cursor:pointer;
+      background:linear-gradient(145deg,#001f3f,#6a00ff,#000);
+      box-shadow:0 10px 20px rgba(0,0,0,0.9), 
+                 inset 0 0 25px rgba(0,0,255,0.7),
+                 0 0 40px rgba(255,0,0,0.7);
+      transition:0.4s;
+      font-weight:bold;
+      letter-spacing:3px;
+      opacity:0;
+      transform:translateY(40px) scale(1);
+      animation:slideUp 1s forwards, floatBtn 6s ease-in-out infinite;
+    }
+    .btn:nth-of-type(1) { animation-delay:0.5s; }
+    .btn:nth-of-type(2) { animation-delay:1s; }
+    .btn:nth-of-type(3) { animation-delay:1.5s; }
+
+    @keyframes slideUp {
+      to { opacity:1; transform:translateY(0) scale(1); }
+    }
+
+    @keyframes floatBtn {
+      0% { transform:translateY(0) scale(1); }
+      50% { transform:translateY(-10px) scale(1.05); }
+      100% { transform:translateY(0) scale(1); }
+    }
+
+    .btn:hover {
+      transform:scale(1.15) translateY(-8px);
+      box-shadow:0 0 60px #007bff, 0 0 100px #ff0000;
+      background:linear-gradient(145deg,#007bff,#ff0000,#000);
+    }
+
+    /* النص السفلي */
+    .footer {
+      margin-top:90px;
+      font-size:36px; /* أكبر */
+      font-family:"Cairo", sans-serif;
+      color:#6a00ff;
+      text-shadow:0 0 30px #007bff, 0 0 60px #ff0000;
+      animation:footerGlow 4s infinite alternate;
+    }
+    @keyframes footerGlow {
+      from { text-shadow:0 0 30px #007bff; }
+      to { text-shadow:0 0 60px #ff0000; }
+    }
+  </style>
+</head>
+<body>
+<audio id="bg.Music" autoplay loop>
+  <source src="251d3f193639201509287dbe542d40a8.mp3" type="audio/mpeg">
+  متصفحك لا يدعم تشغيل الصوت.
+</audio>
+
+<script>
+  const audio = document.getElementById("bgMusic");
+
+  // عند تحميل الصفحة، إذا كان فيه وقت محفوظ، نكمل منه
+  window.addEventListener("load", () => {
+    const savedTime = localStorage.getItem("musicTime");
+    if (savedTime) {
+      audio.currentTime = savedTime;
+    }
+    audio.play();
+  });
+
+  // قبل مغادرة الصفحة، نحفظ الوقت الحالي
+  window.addEventListener("beforeunload", () => {
+    localStorage.setItem("musicTime", audio.currentTime);
+  });
+</script>
+
+  <!-- العنوان -->
+  <div class="panel-title">PANEL PIDRI.XX3</div>
+
+  <!-- الصورة الدائرية -->
+  <img src="Picsart_26-04-17_19-41-25-778.png" alt="Profile" class="profile-pic">
+
+  <!-- الأزرار -->
+  <button class="btn" onclick="location.href='https://www.tiktok.com/@ward.x?_r=1&_t=ZS-95cQTHqBrHE'">
+    تيك توك
+  </button>
+  <button class="btn" onclick="location.href='https://youtube.com/@pidri.xx3?si=McSx-i1AV3g9uqwv'">
+    يوتيوب
+  </button>
+  <button class="btn" onclick="location.href='services.html'">
+    جميع الخدمات
+  </button>
+
+  <!-- النص السفلي -->
+  <div class="footer">مرحبا بكم لدى PIDRI.XX3</div>
+</body>
+</html>
